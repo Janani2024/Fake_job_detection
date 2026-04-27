@@ -7,14 +7,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.svm import LinearSVC
 from sklearn.ensemble import RandomForestClassifier
-from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import train_test_split
 from sklearn.metrics import (
     classification_report,
     accuracy_score,
     recall_score,
     f1_score,
 )
-from sklearn.utils.class_weight import compute_class_weight
 from imblearn.over_sampling import SMOTE
 
 from src.preprocess import load_and_preprocess

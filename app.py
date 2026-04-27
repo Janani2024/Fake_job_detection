@@ -89,10 +89,16 @@ with st.sidebar:
     if results:
         import pandas as pd
         rows = [
-            {"Model": k, "Accuracy %": v["accuracy"], "Recall %": v["recall"], "F1 %": v["f1"]}
+            {
+                "Model": ("⭐ " + k if k == "SVM" else k),
+                "Accuracy %": v["accuracy"],
+                "Recall %": v["recall"],
+                "F1 %": v["f1"],
+            }
             for k, v in results.items()
         ]
         st.dataframe(pd.DataFrame(rows).set_index("Model"), use_container_width=True)
+        st.caption("⭐ SVM — Best Performer (PRD-specified)")
     else:
         st.info("Train a model to see comparison.")
 
